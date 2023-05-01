@@ -20,7 +20,7 @@ print("Using Apache Spark Version", sc.version)
 
 # %%
 # Read the csv dataset into Spark Dataframe and output the rows in the dataframe
-all_videos_file='/Users/johannebear/Library/Mobile Documents/com~apple~CloudDocs/APPLIED ANALYTICS/APAN 5400/final project/youtube videos datasets/YouTubeVideos_trending_data.csv'
+all_videos_file='youtube videos datasets/YouTubeVideos_trending_data.csv'
 all_videos_sdf = sqlContext.read.option("header", "true") \
                          .option("delimiter", ",") \
                          .option("inferSchema", "true") \
@@ -48,11 +48,10 @@ print(len(usa_videos_pandas_df))
 # %%
 import pandas as pd
 # Write the usa_videos dataframe to a csv file
-usa_videos_pandas_df.to_csv('/Users/johannebear/Library/Mobile Documents/com~apple~CloudDocs/APPLIED ANALYTICS/APAN 5400/final project/youtube videos datasets/USA_Videos_trending_data.csv')
+usa_videos_pandas_df.to_csv('USA_Videos_trending_data.csv')
 print('write successfully!')
 
 
-# %% [markdown]
 # Import Filtered Dataset into Neo4j Database for Query
 
 # %%
